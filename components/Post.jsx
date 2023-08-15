@@ -32,6 +32,14 @@ const PostDate = styled.Text`
   margin-top: 2px;
 `
 
+const truncateTitle = (str) => {
+  if(str.length >= 50) {
+    return str.substring(0, 50) + ' ... '
+  }
+
+  return str
+}
+
 export const Post = ({imageUrl, title, createdAt}) => {
   return (
     <View>
@@ -39,8 +47,8 @@ export const Post = ({imageUrl, title, createdAt}) => {
         <PostImage source={{uri: imageUrl}} />
 
         <PostDetails>
-          <PostTitle>{title}</PostTitle>
-          <PostDate>{createdAt}</PostDate>
+          <PostTitle>{truncateTitle(title)}</PostTitle>
+          <PostDate>{new Date(createdAt).toLocaleDateString()}</PostDate>
         </PostDetails>
       </PostView>
       <StatusBar />
