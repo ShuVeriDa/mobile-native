@@ -32,7 +32,6 @@ export default function App() {
         justifyContent: "center",
         alignItems: "center"
       }}>
-
         <ActivityIndicator/>
         <Text style={{marginTop: "15px"}}>Загрузка...</Text>
       </View>
